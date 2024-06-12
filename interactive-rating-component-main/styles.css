@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  font-family: "Overpass", sans-serif;
+}
+
+.card-wrap {
+  background: #141519;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+}
+
+.card-body {
+  width: 280px;
+  padding: 20px;
+  background: #1c232d;
+  border: none;
+  border-radius: 15px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.star {
+  background: #262f38;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  /* padding: 1px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.star img {
+  transform: scale(0.8);
+  position: relative;
+  left: 0.3px;
+}
+
+.message {
+  color: #f3f7f6;
+  margin: 25px auto;
+}
+
+.message h2 {
+  margin: 0 0 10px;
+}
+
+.message p {
+  color: #5c626e;
+  font-size: small;
+  line-height: 1.5;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.rating button {
+  cursor: pointer;
+  margin-top: 25px;
+  height: 35px;
+  border: none;
+  width: 100%;
+  border-radius: 60px;
+  color: #fff;
+  background: hsl(25, 97%, 53%);
+  font-size: 15px;
+  overflow: hidden;
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.rating button:hover {
+  background: #fff;
+  color: hsl(25, 97%, 53%);
+}
+
+ul.options {
+  width: 100%;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding-inline-start: 0px;
+}
+
+.options li {
+  background: #262f38;
+  color: #7c848f;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.4s, background 0.4s;
+}
+
+.options li.active {
+  background: #7c8898;
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.4s, background 0.4s;
+}
+
+.options li:hover {
+  color: #fff;
+  background: hsl(25, 97%, 53%);
+}
+
+.thankyou {
+  text-align: center;
+}
+
+.illustration img {
+  width: 120px;
+  margin: 25px auto;
+}
+
+.thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rating-box {
+  border: none;
+  border-radius: 30px;
+  color: hsl(25, 97%, 53%);
+  background: #262f38;
+  width: fit-content;
+  padding: 5px 15px;
+  margin: auto;
+}
+
+.rating-box p {
+  font-size: 15px;
+}
+
+.attribution {
+  padding: 20px;
+}
+
+.attribution p,
+a {
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.hide {
+  display: none;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 375px) {
+  .card-wrap {
+    background: #141519;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .card-body {
+    width: 80%;
+    height: 65%;
+  }
+
+  .hide {
+    display: none;
+    visibility: hidden;
+  }
+}

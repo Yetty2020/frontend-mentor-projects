@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/**THIS IS THE IMPORTED FONT**/
+@font-face {
+  font-family: MyCustomFont;
+  src: url(assets/fonts/Roboto-Bold.ttf) format("tff");
+  font-weight: regular;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  font-family: MyCustomFont, sans-serif;
+  font-size: 16px;
+}
+/*  */
+
+@media screen and (min-width: 1440px) {
+  body {
+    background-color: hsl(235, 18%, 26%);
+  }
+  /**THIS CODE IS FOR THE MAIN SECTION**/
+
+  .mobile-image {
+    display: none;
+  }
+  main {
+    display: flex;
+
+    flex-direction: row-reverse;
+    gap: 3.5rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+
+    padding: 1rem 2.5rem 1rem 3rem;
+
+    border-radius: 30px;
+
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+  #succes-message {
+    display: flex;
+    display: none;
+
+    flex-direction: column;
+    gap: 1.5rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+
+    padding: 2.5rem 2rem;
+
+    border-radius: 30px;
+
+    justify-content: center;
+    align-items: left;
+    background-color: white;
+  }
+  /**THIS IS TO STYLE THE IMAGE CONTENT*/
+
+  #image-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+  }
+  .desktop-image {
+    width: 120%;
+  }
+  /**THIS IS TO STYLT THE TEXT SECTION**/
+  #text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    justify-content: center;
+    width: 120%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+/**END OF MOBILE DESIGN*/
+
+h4 {
+  font-family: "MyCustomFont", sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.confirmation-text {
+  color: hsl(234, 29%, 20%);
+  font-weight: bold;
+}
+
+.list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.list-point {
+  display: flex;
+  align-items: center;
+
+  gap: 0.8rem;
+}
+
+.sign-in-label {
+  display: flex;
+  gap: 7rem;
+}
+
+.sign-in-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.invalid-email {
+  font-family: "MyCustomFont", sans-serif;
+  font-size: 12px;
+  font-weight: regular;
+  color: white;
+}
+.email-text {
+  font-family: "MyCustomFont", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input {
+  padding: 1rem 4.5rem;
+  border-radius: 0.5rem;
+  color: hsl(231, 7%, 60%);
+  font-size: 16px;
+
+  border: 1px solid hsl(231, 7%, 60%);
+}
+button {
+  padding: 1.2rem 4rem;
+  border-radius: 0.5rem;
+  border: 0;
+  background-color: hsl(234, 29%, 20%);
+  color: white;
+
+  font-size: 14px;
+  font-weight: bold;
+}
+/* button:hover {
+  background-color: hsl(4, 100%, 67%);
+} */
+input:hover {
+  cursor: pointer;
+  border: solid 1px black;
+}
+
+/**THIS IS FOR THE MOBILE VIEW**/
+@media screen and (max-width: 1439px) {
+  body {
+    background-color: white;
+  }
+  .desktop-image {
+    display: none;
+  }
+  /* #succes-message {
+    display: none;
+  } */
+  .desktop-break {
+    display: none;
+  }
+  .mobile-break {
+    display: none;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  #succes-message {
+    display: none;
+
+    flex-direction: column;
+    gap: 2rem;
+    line-height: 1.3;
+
+    padding: 2.5rem 2rem;
+    justify-content: center;
+    align-items: left;
+    background-color: white;
+  }
+
+  /**THIS IS TO STYLE THE IMAGE CONTENT*/
+
+  #image-content {
+    display: flex;
+  }
+  .mobile-image {
+    width: 100%;
+  }
+
+  /**THIS IS TO STYLT THE TEXT SECTION**/
+  #text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    padding: 1rem 1.5rem;
+  }
+
+  input {
+    border-radius: 0.5rem;
+    color: hsl(231, 7%, 60%);
+    font-size: 14px;
+
+    border: 1px solid hsl(231, 7%, 60%);
+    display: block;
+    margin: auto;
+  }
+  button {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 0;
+    background-color: hsl(234, 29%, 20%);
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    display: block;
+    margin: auto;
+  }
+  /* .succes-button {
+    position: absolute;
+    display: block;
+    bottom: 10px;
+
+    margin: auto;
+  } */
+  .list-items {
+    display: flex;
+    flex-direction: column;
+    gap: 01rem;
+  }
+  .attribution {
+    position: absolute;
+
+    bottom: 0;
+  }
+
+  .list-point {
+    display: flex;
+    align-items: center;
+
+    gap: 0.8rem;
+  }
+}

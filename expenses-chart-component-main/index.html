@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
+    ></script>
+    <script type="text/javascript">
+      $(function () {
+        // var bar = [];
+        current_day = 0;
+        $.getJSON("data.json", function (data) {
+          $.each(data, function (i, f) {
+            var dayy = "<p>" + f.day + "</p>";
+            var amountt = f.amount;
+
+            var chart =
+              `<div class="days-table" id="c${current_day}">` +
+              "<p>" +
+              `${dayy}` +
+              "</p>" +
+              `<span class="bar" style="height:${amountt}%">` +
+              "</span>" +
+              `<span class="amount-detail" id='price${current_day}'>` +
+              `$${amountt}` +
+              "</span>" +
+              "</div>";
+
+            current_day += 1;
+
+            $(chart).appendTo("#chart-item");
+          });
+          var today = new Date();
+          var dd = String(today.getDay()).padStart(2, "0");
+          todayy = dd - 1;
+          if (todayy == -1) {
+            let day_id = `#c6`;
+            // console.log(day_id)
+            var c_day = document.querySelector(day_id);
+            // console.log(c_day)
+            c_day.classList.add("current-day");
+          } else {
+            day_id = `#c${todayy}`;
+            // console.log(day_id)
+            var c_day = document.querySelector(day_id);
+            // console.log(c_day)
+            c_day.classList.add("current-day");
+          }
+
+          function add(days) {
+            price = document.querySelector(`#price${days}.amount-detail`);
+            document
+              .querySelector(`#c${days} .bar`)
+              .addEventListener("mouseover", function () {
+                document
+                  .querySelector(`#price${days}.amount-detail`)
+                  .classList.toggle("active");
+              });
+            document
+              .querySelector(`#c${days} .bar`)
+              .addEventListener("mouseout", function () {
+                document
+                  .querySelector(`#price${days}.amount-detail`)
+                  .classList.toggle("active");
+              });
+          }
+
+          for (i = 0; i < 7; i++) {
+            add(i);
+          }
+        });
+      });
+    </script>
+    <title>Frontend Mentor | Expenses chart component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="section-wrap">
+      <div class="section">
+        <div class="balance-wrap">
+          <div class="balance">
+            <p>My balance</p>
+            <h2>$921.48</h2>
+          </div>
+          <div class="logo-wrap">
+            <img src="images/logo.svg" alt="" class="logo" />
+          </div>
+        </div>
+
+        <div class="chart-wrap">
+          <div class="chart">
+            <div class="spending">
+              <h3>Spending - Last 7 days</h3>
+            </div>
+
+            <div class="chart-items" id="chart-item">
+              <!-- {chart} -->
+            </div>
+            <hr />
+
+            <div class="bottom">
+              <div class="this-month">
+                <p>Total this month</p>
+              </div>
+              <div class="price">
+                <h1>$478.33</h1>
+                <div class="last-month">
+                  <h5>+2.4%</h5>
+                  <p>from last month</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >.
+      </p>
+      <p>
+        Coded by
+        <a href="https://github.com/Yetty2020">Adetoro Fatiha</a>.
+      </p>
+    </div>
+  </body>
+</html>

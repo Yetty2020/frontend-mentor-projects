@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+}
+
+.body-wrap {
+  background: hsl(218, 23%, 16%);
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.body-card {
+  background: hsl(217, 19%, 24%);
+  border: none;
+  border-radius: 10px;
+  width: 390px;
+  /* height: 200px; */
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 12px;
+}
+
+#advice-id {
+  margin: 0px 0 0;
+  color: hsl(150, 100%, 66%);
+  font-weight: 100;
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+
+.quote {
+  color: hsl(193, 38%, 86%);
+  padding: 10px 12px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.divider img {
+  width: 85%;
+  margin: 0px 0 15px;
+}
+
+.dice {
+  background: hsl(150, 100%, 66%);
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -17.5px;
+  z-index: 1;
+  cursor: pointer;
+  transition: box-shadow 0.32s ease-in;
+}
+
+.dice img {
+  width: 42%;
+}
+
+.dice:hover {
+  box-shadow: 0 0 20px 2px hsl(150, 100%, 66%);
+}
+
+.attribution {
+  padding: 20px;
+}
+
+.attribution p,
+a {
+  text-decoration: none;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 375px) {
+  .dice {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    top: -22.5px;
+  }
+}

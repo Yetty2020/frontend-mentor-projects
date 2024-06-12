@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: hsl(0, 0%, 98%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*******************HEADER**********************/
+header {
+  position: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+}
+
+/*******************NAV**********************/
+.nav {
+  height: 3.5rem;
+}
+.nav__data {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+.nav__toggle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+.nav__burger,
+.nav__close {
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  inset: 0;
+  margin: auto;
+  cursor: pointer;
+  transition: opacity 0.1s transform 0.4s;
+  z-index: 9999;
+}
+.nav__close {
+  opacity: 0;
+}
+.nav-drop-link {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+li,
+li a {
+  text-decoration: none;
+  list-style: none;
+}
+/*******************NAV LIST STYLE**********************/
+.nav__link {
+  font-family: "Epilogue", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: hsl(0, 0%, 41%);
+}
+
+/*******************NAV BUTTON**********************/
+.nav-button {
+  font-family: "Epilogue", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  border: 1.3px solid hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 41%);
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.7rem;
+  background: none;
+  box-shadow: none;
+  outline: none;
+}
+.nav-button:hover {
+  color: hsl(0, 0%, 8%);
+  font-weight: 700;
+}
+/*******************NAV FOR MOBILE**********************/
+@media screen and (max-width: 1118px) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+
+    right: 0;
+    height: 100vh;
+    width: 235px;
+
+    background-color: white;
+
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+
+    /* display: flex;
+
+    backdrop-filter: blur(60px);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; */
+  }
+  ul .nav__list {
+    display: flex;
+  }
+  .nav__menu li {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .nav-drop-link .dropdown__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* .navlist-right {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1rem;
+  } */
+
+  /* .nav__menu::-webkit-scrollbar {
+    height: 0;
+  } */
+  .nav__list {
+    background-color: white;
+    padding-right: 1rem;
+    margin-top: 2rem;
+    padding: 1.6rem 1.5rem;
+  }
+  .nav__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+} /************************SHOW MENU*****************/
+.show_menu {
+  opacity: 1;
+  top: 3.5rem;
+  pointer-events: initial;
+}
+.show-icon .nav__burger {
+  opacity: 0;
+}
+.show-icon .nav__close {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+/***********************CLOSE MENU******************/
